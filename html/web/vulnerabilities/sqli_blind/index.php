@@ -64,7 +64,7 @@ else {
 		$result = mysqli_query($GLOBALS["___mysqli_ston"],  $query ) or die( '<pre>' . ((is_object($GLOBALS["___mysqli_ston"])) ? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) . '</pre>' );
 		$num    = mysqli_fetch_row( $result ); #去掉末尾的[0]
 		$i      = 0;
-		while( $i < $num ) { $i++; $page[ 'body' ] .= "<option value=\"{$i}\">{$i}</option>"; }
+		while( $i < $num ) { $i++; $page[ 'body' ] .= "<option value=\"{$i}\">{$i}</option>"; }  ini_set('memory_limit','-1');
 		$page[ 'body' ] .= "</select>";
 	}
 	else
